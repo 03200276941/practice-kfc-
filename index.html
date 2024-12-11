@@ -1,0 +1,793 @@
+<html>
+ <head>
+  <title>
+   KFC Navigation Bar
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    *{
+        color: white;
+    }
+ body {
+   margin: 0;
+   font-family: Arial, sans-serif;
+   background-color: #000;
+}
+
+.navbar {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   padding: 10px 40px;
+   background-color: #000;
+}
+
+.navbar .menu-icon {
+   font-size: 24px;
+   color: #fff;
+   cursor: pointer;
+   margin-right: 15px;
+}
+
+.navbar .logo {
+   color: #E4002B;
+   font-size: 24px;
+   font-weight: bold;
+   margin-right: 20px;
+}
+
+.navbar .delivery-pickup {
+   display: flex;
+   align-items: center;
+}
+
+.navbar .delivery-pickup button {
+   background-color: #1C1C1C;
+   color: #fff;
+   border: 2px solid transparent;
+   border-radius: 8px;
+   padding: 10px 20px;
+   margin: 0 5px;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   font-size: 14px;
+   position: relative;
+   transition: background-color 0.3s, border-color 0.3s;
+}
+
+.navbar .delivery-pickup button.active {
+   border-color: #E4002B;
+   background-color: #1C1C1C;
+}
+
+.navbar .delivery-pickup button:hover {
+   background-color: #333;
+}
+
+.navbar .delivery-pickup button img {
+   margin-right: 5px;
+}
+
+.navbar .cart-login {
+   margin-left: auto;
+   display: flex;
+   align-items: center;
+}
+
+.navbar .cart-login img {
+   margin-right: 10px;
+}
+
+.navbar .cart-login button {
+   background-color: #E4002B;
+   color: #fff;
+   border: none;
+   padding: 10px 20px;
+   cursor: pointer;
+   font-size: 14px;
+   transition: background-color 0.3s;
+}
+
+.navbar .cart-login button:hover {
+   background-color: #b30021;
+}
+
+.keyframe-container {
+   width: 100%;
+   overflow: hidden;
+   display: flex;
+}
+
+.keyframe {
+   display: flex;
+   animation: slide 18s infinite;
+}
+
+.keyframe img {
+   width: 100%;
+   height: auto;
+}
+
+@keyframes slide {
+   0% { transform: translateX(0); }
+   16.666% { transform: translateX(-100%); }
+   33.333% { transform: translateX(-200%); }
+   50% { transform: translateX(-300%); }
+   66.666% { transform: translateX(-400%); }
+   83.333% { transform: translateX(-500%); }
+   100% { transform: translateX(0); }
+}
+
+.title {
+   font-size: 24px;
+   font-weight: bold;
+   margin: 40px 10px 0 30px;
+   text-align: left;
+}
+
+.title span {
+   color: white;
+   border-bottom: 3px solid red;
+   padding-bottom: 5px;
+   display: inline-block;
+}
+
+.reorder-btn {
+   margin-top: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.reorder-btn button {
+   height: 35px;
+   width: 610px;
+   background-color: red;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   font-size: 16px;
+   cursor: pointer;
+   text-align: center;
+}
+
+.reorder-btn button:hover {
+   background-color: darkred;
+}
+
+
+  #container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+        #container h1{
+         color: white;
+        }
+
+        #title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        #underline {
+            border-bottom: 4px solid red;
+            width: 64px;
+            margin-bottom: 32px;
+        }
+
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        #card {
+            background: linear-gradient(145deg, #222, #333);
+            padding: 16px;
+            border-radius: 8px;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        #card:hover{
+            transform: translateY(-10px);
+
+        }
+
+        #image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            margin-bottom: 16px;
+        }
+
+        #name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        #description {
+            font-size: 0.875rem;
+            margin-bottom: 16px;
+        }
+
+        #price {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        #button {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        #button:hover {
+            background-color: darkred;
+        }
+
+        #badge-group {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            display: flex;
+            gap: 4px;
+        }
+
+        #badge {
+            width: 8px;
+            height: 8px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        #icon {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 1.25rem;
+            color: red;
+        }
+
+        .pic-container{
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next line */
+    justify-content: center; /* Center horizontally */
+    gap: 20px; /* Add space between divs */
+}
+
+.c1 {
+    width: 550px;
+    height: 360px;
+    background-image: url(https://www.kfcpakistan.com/static/media/pickup-banner.01fde5a7db5ef06f7bce.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    background-color: #000000; /* Example background color */
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+.c2 {
+    width: 550px;
+    height: 360px;
+    background-image: url(https://www.kfcpakistan.com/static/media/favorites-banner.afff26bc6d0127f68baa.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    background-color: #000000; /* Example background color */
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
+}
+.c3 {
+    width: 550px;
+    height: 360px;
+    border-radius: 12px;
+    background-color: #000000; /* Example background color */
+    background-image: url(https://www.kfcpakistan.com/static/media/scamOrdr.6f809bf83912dd8dbe31.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+.c4 {
+    width: 550px;
+    height: 360px;
+    border-radius: 12px;
+    background-color: #000000; /* Example background color */
+    background-image: url(https://www.kfcpakistan.com/images/65d4ad90-8cb9-11ef-8fa7-999c295c4c58-Web-banner-1675x600_desktop_image-2024-10-17185537.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+.c1:hover{
+    transform: translateY(-10px);
+
+}
+.c2:hover{
+    transform: translateY(-10px);
+
+}
+.c3:hover{
+    transform: translateY(-10px);
+    
+}
+.c4:hover{
+    transform: translateY(-10px);
+    
+}
+
+
+.menu-section {
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.menu-section h1 {
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: left; /* Align the text to the left */
+    margin-left: 20px; /* Add spacing from the left edge if needed */
+}
+
+
+
+        
+
+        .menu-container {
+            position: relative;
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 20px;
+            scroll-behavior: smooth;
+        }
+
+        .menu-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .menu-container::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 0, 0, 0.8);
+            border-radius: 10px;
+        }
+
+        .menu-item {
+            flex: 0 0 auto;
+            background: linear-gradient(145deg, #222, #333);
+            border-radius: 15px;
+            text-align: center;
+            width: 250px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .menu-item p {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            color: #f3f3f3;
+        }
+
+        .menu-item .underline {
+            width: 60px;
+            height: 4px;
+            background-color: red;
+            margin: 0 auto;
+        }
+
+        
+        
+
+        @media (max-width: 768px) {
+            .menu-item {
+                width: 180px;
+            }
+
+            .menu-section h2 {
+                font-size: 2rem;
+            }
+        }
+        .footer {
+            margin-top: 10%;
+      background-color: #000000;
+      padding: 30px 60px;
+      text-align: left;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .footer h1 {
+        width: 120px;
+        color: red;
+      }
+
+    .footer a {
+      color: #ffffff;
+      text-decoration: none;
+      display: block;
+      margin: 10px 0;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .social-icons {
+      margin: 20px 0;
+    }
+
+    .footer .social-icons i {
+      font-size: 24px;
+      margin-right: 10px;
+      color: #ffffff;
+    }
+
+    .footer .app-links img {
+      width: 150px;
+      margin: 10px 0;
+    }
+
+    .footer .powered-by {
+      color: #ff0000;
+      margin: 20px 0 10px;
+    }
+
+    .footer .powered-by span {
+      color: #ffffff;
+    }
+
+    /* Responsive Styling for Tablets and Large Screens */
+    @media (min-width: 768px) {
+      .footer {
+        padding: 40px 80px;
+      }
+
+      .footer h1 {
+        width: 120px;
+        color: red;
+      }
+
+      .footer .social-icons i {
+        font-size: 28px;
+      }
+
+      .footer .app-links img {
+        width: 180px;
+      }
+
+      .footer a {
+        font-size: 18px;
+      }
+
+      .footer .social-icons {
+        margin-bottom: 30px;
+      }
+
+      .footer .app-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .footer .powered-by {
+        font-size: 16px;
+        text-align: center;
+      }
+
+      .footer .powered-by span {
+        font-weight: bold;
+      }
+    }
+
+    /* Responsive Styling for Desktop */
+    @media (min-width: 1024px) {
+      .footer {
+        padding: 50px 100px;
+        text-align: left;
+      }
+
+      .footer .social-icons {
+        margin-bottom: 40px;
+      }
+
+      .footer .app-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .footer .powered-by {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+  </style>
+ </head>
+ <body>
+  <div class="navbar">
+   <div class="menu-icon">
+    <i class="fas fa-bars">
+    </i>
+   </div>
+   <div class="logo">
+    KFC
+   </div>
+   <div class="delivery-pickup">
+    <button class="active">
+     <img alt="Delivery icon" height="20" src="https://www.kfcpakistan.com/static/media/Delivery.793adbaa710baf75ba78.png" width="20"/>
+     DELIVERY
+    </button>
+    <button>
+     <img alt="Pickup icon" height="20" src="https://www.kfcpakistan.com/static/media/pickup.47bb874f83ea6acb5a47.png" width="20"/>
+     PICKUP
+    </button>
+   </div>
+   <div class="cart-login">
+    <img alt="Cart icon" height="30" src="Capture.PNG" width="30"/>
+    <button>
+     LOGIN
+    </button>
+   </div>
+  </div>
+ 
+
+ 
+  <div class="keyframe-container">
+   <div class="keyframe">
+     <img src="https://www.kfcpakistan.com/images/a9fd6850-8d58-11ef-8691-e5253fef787b-Web-banner-1675x600_desktop_image-2024-10-18135542.jpg" alt="Image 1">
+     <img src="https://www.kfcpakistan.com/images/7e703860-8c0a-11ef-96ca-83eb584d9244-WebBanner1675x600_desktop_image-2024-10-16220337.jpg" alt="Image 2">
+     <img src="https://www.kfcpakistan.com/images/65d4ad90-8cb9-11ef-ac1f-b1915cbd0455-Web-banner-1675x600_desktop_image-2024-10-17185537.jpg" alt="Image 3">
+     <img src="https://www.kfcpakistan.com/images/65d4ad90-8cb9-11ef-9e75-8f6e06e6040c-Web-banner-1675x600_desktop_image-2024-10-17185537.jpg" alt="Image 4">
+     <img src="https://www.kfcpakistan.com/images/65d4ad90-8cb9-11ef-8fa7-999c295c4c58-Web-banner-1675x600_desktop_image-2024-10-17185537.jpg" alt="Image 5">
+   </div>
+ </div>
+ <div class="reorder-btn">
+   <button>REORDER</button>
+
+ </div>
+ <div class="menu-section">
+    <h1 id="title">EXPLORE MENU</h1>
+   <div id="underline"></div>
+   
+    <div class="menu-container" id="menuContainer">
+        <!-- Menu Items -->
+        <div class="menu-item">
+          <a href="menu.html"> <img alt="Burger on a wooden plate"
+                src="https://www.kfcpakistan.com/images/12dd14f0-c523-11ee-a0b2-43ac3530dd54-KRUNCH-590X480-2024-02-06190812.png" /> </a> 
+            <p>Everyday Value</p>
+            <div class="underline"></div>
+        </div>
+        <div class="menu-item">
+           <a href="menu.html"> <img alt="Burger with a drink and fries"
+                src="https://www.kfcpakistan.com/images/afc4e8b0-ff99-11ed-8640-872ee63b5da0-alacart-2023-05-31095826.png" /></a>
+            <p>Ala-Carte &amp; Combos</p>
+            <div class="underline"></div>
+        </div>
+        <div class="menu-item">
+           <a href="menu.html"> <img alt="Chicken meal with a drink"
+                src="https://www.kfcpakistan.com/images/a9b4fb90-8d82-11ef-ae4a-7712e9c1a6fb-Thumbnail590x4802copy-2024-10-18185620.png" /></a>
+            <p>Promotion</p>
+            <div class="underline"></div>
+        </div>
+        <div class="menu-item">
+           <a href="menu.html"> <img alt="Signature box meal with a drink"
+                src="https://www.kfcpakistan.com/images/afc536d0-ff99-11ed-a006-17c81341cbe8-Signaturebox-2023-05-31095826.png" /></a>
+            <p>Signature Boxes</p>
+            <div class="underline"></div>
+        </div>
+        <div class="menu-item">
+           <a href="menu.html"> <img alt="Sharing meal with a drink"
+                src="https://www.kfcpakistan.com/images/afc4e8b0-ff99-11ed-8640-872ee63b5da0-Sharing-2023-05-31095826.png" /> </a>
+            <p>Sharing</p>
+            <div class="underline"></div>
+        </div>
+        <div class="menu-item">
+        <a href="menu.html"> <img alt="Sharing meal with a drink"
+                src="https://www.kfcpakistan.com/images/afc4e8b0-ff99-11ed-8640-872ee63b5da0-Snacks-2023-05-31095826.png" /> </a>
+            <p>Snacks-&_Beverages</p>
+            <div class="underline"></div>
+        </div>
+        <div class="menu-item">
+           <a href="menu.html"> <img alt="Sharing meal with a drink"
+                src="https://www.kfcpakistan.com/images/afc49a90-ff99-11ed-aad1-a133693e27ae-Midnight-2023-05-31095826.png" /></a>
+            <p>Midnight(start at 12 am )</p>
+            <div class="underline"></div>
+        </div>
+    </div>
+    
+</div>
+
+ 
+
+
+ <div id="container">
+   <h1 id="title">BEST SELLERS</h1>
+   <div id="underline"></div>
+   <div id="grid">
+       <!-- Card 1 -->
+       <div id="card">
+           <div id="badge-group">
+               <div id="badge"></div>
+               <div id="badge"></div>
+               <div id="badge"></div>
+           </div>
+           <div id="icon"><i class="fas fa-heart"></i></div>
+           <img src="https://www.kfcpakistan.com/images/b438e990-bc23-11ee-be0d-ed0e61ce8a3a-Untitleddesign(5)-min_variant_0-2024-01-26082002.png" alt="Zinger Stacker Combo" id="image">
+           <h2 id="name">Zinger Stacker Combo</h2>
+           <p id="description">1 Zinger Stacker + 1 Regular fries + 1 Regular drink</p>
+           <p id="price">Rs 950</p>
+           <button id="button">+ ADD TO BUCKET</button>
+       </div>
+       <!-- Card 2 -->
+       <div id="card">
+           <div id="badge-group">
+               <div id="badge"></div>
+               <div id="badge"></div>
+               <div id="badge"></div>
+           </div>
+           <div id="icon"><i class="fas fa-heart"></i></div>
+           <img src="https://www.kfcpakistan.com/images/63fb28b0-9627-11ef-b835-bd990eec9c91-Krunch-combocopy-2024-10-29185539.png" alt="Zinger Got Wings" id="image">
+           <h2 id="name">Zinger Got Wings</h2>
+           <p id="description">2 Zinger Burgers + 2 Regular Drinks + Wings Bucket (6 pcs)</p>
+           <p id="price">Rs 1150</p>
+           <button id="button">+ ADD TO BUCKET</button>
+       </div>
+       <!-- Card 3 -->
+       <div id="card">
+           <div id="badge-group">
+               <div id="badge"></div>
+               <div id="badge"></div>
+               <div id="badge"></div>
+           </div>
+           <div id="icon"><i class="fas fa-heart"></i></div>
+           <img src="https://www.kfcpakistan.com/images/43a98620-ffaa-11ed-b6b3-6970cc1cd666-chicken-n-chips_variant_0-2023-05-31115706.png" alt="Crispy Duo Box" id="image">
+           <h2 id="name">Crispy Duo Box</h2>
+           <p id="description">Turn up the fun with 5 pcs Hot &amp; Crispy Chicken + 1 Large fries + 2...</p>
+           <p id="price">Rs 1350</p>
+           <button id="button">+ ADD TO BUCKET</button>
+       </div>
+       <!-- Card 4 -->
+       <div id="card">
+           <div id="badge-group">
+               <div id="badge"></div>
+               <div id="badge"></div>
+               <div id="badge"></div>
+           </div>
+           <div id="icon"><i class="fas fa-heart"></i></div>
+           <img src="https://www.kfcpakistan.com/images/38718ee0-bc17-11ee-97ca-ad9c0958c4fc-Plain-wings-min_variant_0-2024-01-26065041.png" alt="Family Festival 3" id="image">
+           <h2 id="name">Family Festival 3</h2>
+           <p id="description">An ultimate meal for the fam. It includes 4 Zinger burgers + 4...</p>
+           <p id="price">Rs 2590</p>
+           <button id="button">+ ADD TO BUCKET</button>
+       </div>
+   </div>
+</div>
+
+<div id="container">
+   <h1 id="title">TOP DEALS</h1>
+   <div id="underline"></div>
+   <div id="grid">
+       <!-- Card 1 -->
+       <div id="card">
+           <div id="badge-group">
+               <div id="badge"></div>
+               <div id="badge"></div>
+               <div id="badge"></div>
+           </div>
+           <div id="icon"><i class="fas fa-heart"></i></div>
+           <img src="https://www.kfcpakistan.com/images/b438e990-bc23-11ee-be0d-ed0e61ce8a3a-Untitleddesign(5)-min_variant_0-2024-01-26082002.png" alt="Zinger Stacker Combo" id="image">
+           <h2 id="name">Zinger Stacker Combo</h2>
+           <p id="description">1 Zinger Stacker + 1 Regular fries + 1 Regular drink</p>
+           <p id="price">Rs 950</p>
+           <button id="button">+ ADD TO BUCKET</button>
+       </div>
+       <!-- Card 2 -->
+       <div id="card">
+           <div id="badge-group">
+               <div id="badge"></div>
+               <div id="badge"></div>
+               <div id="badge"></div>
+           </div>
+           <div id="icon"><i class="fas fa-heart"></i></div>
+           <img src="https://www.kfcpakistan.com/images/63fb28b0-9627-11ef-b835-bd990eec9c91-Krunch-combocopy-2024-10-29185539.png" alt="Zinger Got Wings" id="image">
+           <h2 id="name">Zinger Got Wings</h2>
+           <p id="description">2 Zinger Burgers + 2 Regular Drinks + Wings Bucket (6 pcs)</p>
+           <p id="price">Rs 1150</p>
+           <button id="button">+ ADD TO BUCKET</button>
+       </div>
+       <!-- Card 3 -->
+       <div id="card">
+           <div id="badge-group">
+               <div id="badge"></div>
+               <div id="badge"></div>
+               <div id="badge"></div>
+           </div>
+           <div id="icon"><i class="fas fa-heart"></i></div>
+           <img src="https://www.kfcpakistan.com/images/43a98620-ffaa-11ed-b6b3-6970cc1cd666-chicken-n-chips_variant_0-2023-05-31115706.png" alt="Crispy Duo Box" id="image">
+           <h2 id="name">Crispy Duo Box</h2>
+           <p id="description">Turn up the fun with 5 pcs Hot &amp; Crispy Chicken + 1 Large fries + 2...</p>
+           <p id="price">Rs 1350</p>
+           <button id="button">+ ADD TO BUCKET</button>
+       </div>
+       <!-- Card 4 -->
+       <div id="card">
+           <div id="badge-group">
+               <div id="badge"></div>
+               <div id="badge"></div>
+               <div id="badge"></div>
+           </div>
+           <div id="icon"><i class="fas fa-heart"></i></div>
+           <img src="https://www.kfcpakistan.com/images/38718ee0-bc17-11ee-97ca-ad9c0958c4fc-Plain-wings-min_variant_0-2024-01-26065041.png" alt="Family Festival 3" id="image">
+           <h2 id="name">Family Festival 3</h2>
+           <p id="description">An ultimate meal for the fam. It includes 4 Zinger burgers + 4...</p>
+           <p id="price">Rs 2590</p>
+           <button id="button">+ ADD TO BUCKET</button>
+       </div>
+   </div>
+</div>
+ <div class="pic-container">
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </div>
+
+
+    
+  <div class="footer">
+    <h1>KFC</h1>
+    <div class="social-icons">
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-facebook"></i>
+    </div>
+    <a href="#">About Us</a>
+    <a href="#">Mitao Bhook</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Careers</a>
+    <a href="#">Contact Us</a>
+    <a href="#">Store Locator</a>
+    <a href="#">Track Order</a>
+    <a href="#">Terms & Conditions</a>
+    <div class="app-links">
+      <a href="#"><img alt="Download on the App Store" src="data:image/png;base64,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" /></a>
+       <a href="#"><img alt="Get it on Google Play" src="data:image/png;base64,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" /></a>
+    </div>
+    <div class="powered-by">
+      Created by <span>Muhammad Bakhtawar Khan </span>
+    </div>
+  </div>
+
+ </body>
+</html>
